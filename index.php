@@ -1,6 +1,6 @@
 <?php
   //array that'll contain color's letter
-  $string = 'abcdefghijklmnopqrstuvwxyz01234567890';
+  $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890';
   $associations = array();
 
   //grab image
@@ -25,6 +25,15 @@
       }
       //get colorindex
       $colorindex = imagecolorat($img, $w, $h);
+      $r = ($colorindex >> 16) & 0xFF;
+      $g = ($colorindex >> 8 ) & 0xFF;
+      $b = $colorindex & 0xFF;
+
+      //check for white and offwhite
+      if($r > 200 && $g > 200 && $b > 200){
+       echo '=';
+       continue;
+      }
 
       //check if exist in association, if it does, echo
       //if it doesnt, add it and echo it
