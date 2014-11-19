@@ -6,7 +6,7 @@
   //grab image
   //WIP detect extension
   //and use appropriate function ex: for jpg or png
-  $img = imagecreatefrompng('globe.png');
+  $img = imagecreatefrompng('example.png');
 
   //get width/height
   $width = imagesx($img);
