@@ -10,6 +10,10 @@ Simply upload a file using the upload button and it'll return the ascii equivale
 
 The tool currently support png and jpg image.
 
+## Why
+
+For fun.
+
 ## License
 
 Copyright (C) 2014 by Mathieu Gosselin
