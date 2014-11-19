@@ -51,5 +51,3 @@
     return $string[mt_rand(0, strlen($string))];
   }
 ?>
-<br>
-<p>salutt</p>
