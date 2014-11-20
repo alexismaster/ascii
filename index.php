@@ -1,7 +1,6 @@
 <?php
-  //array that'll contain color's letter
-  $string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890';
-  $associations = array();
+  //dark to light array collection
+  $string = array('@','#','$','=','*','!',';',':','~','-',',','.','&nbsp;', '&nbsp;');
 
   //grab image
   //WIP detect extension
@@ -25,29 +24,18 @@
       }
       //get colorindex
       $colorindex = imagecolorat($img, $w, $h);
-      $r = ($colorindex >> 16) & 0xFF;
-      $g = ($colorindex >> 8 ) & 0xFF;
-      $b = $colorindex & 0xFF;
-
-      //check for white and offwhite
-      if($r > 200 && $g > 200 && $b > 200){
-       echo '=';
-       continue;
-      }
-
-      //check if exist in association, if it does, echo
-      //if it doesnt, add it and echo it
-      if (!isset($associations[$colorindex])){
-        $associations[$colorindex] = generate();
-      }
-      echo $associations[$colorindex];
+      //get colorindex rgb
+      $rgb = imagecolorsforindex($img, $colorindex);
+      //get the dark - light number and generate value from string array
+      $value = max($rgb['red'], $rgb['green'], $rgb['blue'])/255;
+      echo generate($value);
     }
   }
   echo '</pre>';
 
-  function generate(){
+  function generate($value){
     global $string;
-    str_shuffle($string);
-    return $string[mt_rand(0, strlen($string))];
+    $length = count($string) - 1;
+    return $string[intval($value * $length, 10)];
   }
 ?>
