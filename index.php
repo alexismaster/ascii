@@ -17,7 +17,7 @@
     <div id="main-container">
       <header class="wrapper clearfix">
         <h1 id="title">
-          <img src="assets/img/compass.png" alt="ASCII">
+          <img src="assets/img/compass.png" alt="ASCII" title="ASCII">
         </h1>
         <p>To convert a picture, choose a file from your computer and click the button "generate". Optionally you can customize the output by pressing the parameter button and changing the configuration.</p>
         <form action="/generate" method="post" enctype="multipart/form-data">
