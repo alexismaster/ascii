@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>ASCII</title>
+    <link rel="shortcut icon" href="compass.ico" type="image/x-icon">
+    <link rel="icon" href="compass.ico" type="image/x-icon">
   </head>
   <body>
     <?php
