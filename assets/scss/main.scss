@@ -2,122 +2,26 @@
 @import 'reset.scss';
 @import 'general.scss';
 
-.wrapper{
-  width:90%;
-  margin:0 5%;
-  padding:0;
-}
-
-#header-container, #main-container{
-  width:1080px;
-  margin: 0 auto;
-  padding:0 0 1em 0;
-}
-
-#header-container{
-  .content{
-    padding: 2em 0 0em 0;
-    border-bottom:1px solid #ddd;
-    display:table;
-    .cell{
-      display: block;
-      float: left;
-      line-height: 45px;
-      &.img{
-        text-align:center;
-        a{
-          float:none;
-        }
-      }
-      &.w3{
-        width:30%;
-      }
-      &.w4{
-        width:40%;
-      }
-    }
-    h1{
-      display:inline;
-      font-size: 1em;
-      font-weight: 500;
-    }
-    img{
-      width: 45px;
-      display: inline-block;
-    }
-    a{
-      display:inline-block;
-      float:right;
-      font-weight:500;
-    }
-  }
-}
-
 #main-container{
-  h2{
-    font-size: 2.6em;
-    text-align: center;
-    font-weight: 200;
-    margin: 1.5em 0 1em 0;
-  }
-  p{
-    text-align:center;
-  }
-  form{
-    text-align:center;
-    margin:2em 0;
-  }
-  .spacer{
-    margin:10em 0;
-    color: #929292;
-    font-size:1em;
-    img{
-      width:45px;
-      display:none;
-    }
-  }
-  .boldy{
-    font-weight: 500;
-    margin:0 0 1em 0;
-  }
-  .tiny{
-    font-weight: 500;
-    font-size: 0.8em;
-    margin:0 0 1em 0;
-  }
-  .ex{
-    font-size:0.8em;
-  }
-}
-
-#footer-container{
-  margin-top: 6em;
-  .wrapper{
-    border-top:1px solid #ddd;
-    padding:0.5em 0;
-  }
-  .cell{
-    display: block;
-    float: left;
-    line-height: 25px;
-    &.img{
+  min-height: 100%;
+  position: relative;
+  header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 750px;
+    margin:-102px 0 0 -375px;
+    h1{
       text-align:center;
-      a{
-        float:none;
+      margin: 0 0 1em 0;
+      img{
+        display:inline-block;
+        width:120px;
       }
     }
-    &.w3{
-      width:30%;
+    form{
+      margin:2em 0 0 0;
+      text-align: center;
     }
-    &.w4{
-      width:40%;
-    }
-  }
-  p{
-    font-size:0.75em;
-  }
-  img{
-    width: 25px;
-    display: inline-block;
   }
 }

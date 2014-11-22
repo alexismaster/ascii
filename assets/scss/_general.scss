@@ -43,14 +43,19 @@ a{
 }
 
 *{
-  font-family: 'Roboto', sans-serif;
-  font-weight:300;
+  font-family: 'Lora', serif;
+  font-weight:400;
+  color:#717171;
 }
 
 body{
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-size:1em;
+}
+
+html, body{
+  height: 100%;
 }
 
 hr{
@@ -64,14 +69,19 @@ input{
   border: 1px solid #ddd;
   display: inline-block;
   vertical-align: top;
+  cursor: pointer;
 }
 button{
   vertical-align: top;
-  color:#157efb;
-  border: 1px solid #157efb;
+  background: #5CC77A none;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid #5CC77A;
   padding:0.5em 0.7em;
   font-size:1em;
-  background:transparent none;
   display:inline-block;
-  @include border-radius(4px);
+  &:hover{
+    background: #50AD6A none;
+    border: 2px solid #50AD6A;
+  }
 }

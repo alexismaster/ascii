@@ -2,86 +2,29 @@
 <html>
   <head>
     <title>ASCII</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <link rel="shortcut icon" href="assets/img/compass.ico" type="image/x-icon">
     <link rel="icon" href="assets/img/compass.ico" type="image/x-icon">
+
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/main.min.css">
   </head>
   <body>
-    <?php
-      /*================================================================================*/
-        //require composer laoder
-        require 'vendor/autoload.php';
-
-        //bunch of variables
-        //dark to light array collection
-        $string = array('@','#','$','&','*','!',';',':','~','-',',','.','=', '=');
-
-        $imagine = new Imagine\Gd\Imagine();
-        $imgpath = 'assets/img/';
-        $tmppath = 'tmp/';
-        $filename = 'example2.png';
-        $lineheight = 10;
-        $fontsize = $lineheight * 2;
-
-        //grab image
-        $image = $imagine->open($imgpath . $filename);
-
-        //get size
-        $width = $image->getSize()
-          ->getWidth();
-        $height = $image->getSize()
-          ->getHeight();
-
-        //calculate new width
-        $newWidth = round($width / 2.5);
-        $newHeight = round($height / 2.5);
-
-        //instanciate new size and mode for thumbnail method
-        $size = new Imagine\Image\Box($newWidth, $newHeight);
-        $mode = Imagine\Image\ImageInterface::THUMBNAIL_INSET;
-
-        $newfilename = $tmppath . 'v2'.$filename;
-
-        //crop the image using thumnail method and save it
-        $image->thumbnail($size, $mode)
-          ->save($newfilename);
-
-        //get new image to analyze pixel by pixel to draw ascii
-        $source = imagecreatefrompng($newfilename);
-
-        //paste character in a pre html tag
-        echo '<pre class="white" style="font: ' . $fontsize . 'px/' . $lineheight . 'px monospace; text-align: center;">';
-        //loop through all pixel by
-        //every row of every column
-        for($h = 0; $h < $newHeight; $h++){
-          for($w = 0; $w <= $newWidth; $w++){
-            //if it is the last row
-            if($w == $newWidth){
-              echo "\n";
-              continue;
-            }
-            //get colorindex
-            $colorindex = imagecolorat($source, $w, $h);
-            //get colorindex rgb
-            $rgb = imagecolorsforindex($source, $colorindex);
-            //get the dark - light number and generate value from string array
-            $value = max($rgb['red'], $rgb['green'], $rgb['blue'])/255;
-            //echo $value;
-            echo generate($value);
-          }
-        }
-        echo '</pre>';
-
-        function generate($value){
-          global $string;
-          $length = count($string) - 1;
-          return $string[intval($value * $length, 10)];
-        }
-
-        function dd($data){
-          var_dump($data);
-          die();
-        }
-      /*================================================================================*/
-    ?>
+    <div id="main-container">
+      <header class="wrapper clearfix">
+        <h1 id="title">
+          <img src="assets/img/compass.png" alt="ASCII">
+        </h1>
+        <p>To convert a picture, choose a file from your computer and click the button "generate". Optionally you can customize the output by pressing the parameter button and changing the configuration.</p>
+        <form action="/generate" method="post" enctype="multipart/form-data">
+          <input type="file" name="img">
+          <button type="submit" name="submit">Generate</button>
+        </form>
+      </header>
+    </div>
   </body>
 </html>
