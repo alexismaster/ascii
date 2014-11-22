@@ -2,8 +2,8 @@
 <html>
   <head>
     <title>ASCII</title>
-    <link rel="shortcut icon" href="compass.ico" type="image/x-icon">
-    <link rel="icon" href="compass.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/compass.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/compass.ico" type="image/x-icon">
   </head>
   <body>
     <?php
@@ -16,12 +16,14 @@
         $string = array('@','#','$','&','*','!',';',':','~','-',',','.','=', '=');
 
         $imagine = new Imagine\Gd\Imagine();
-        $filename = 'glasses.png';
+        $imgpath = 'assets/img/';
+        $tmppath = 'tmp/';
+        $filename = 'example2.png';
         $lineheight = 10;
         $fontsize = $lineheight * 2;
 
         //grab image
-        $image = $imagine->open($filename);
+        $image = $imagine->open($imgpath . $filename);
 
         //get size
         $width = $image->getSize()
@@ -37,7 +39,7 @@
         $size = new Imagine\Image\Box($newWidth, $newHeight);
         $mode = Imagine\Image\ImageInterface::THUMBNAIL_INSET;
 
-        $newfilename = 'v2'.$filename;
+        $newfilename = $tmppath . 'v2'.$filename;
 
         //crop the image using thumnail method and save it
         $image->thumbnail($size, $mode)
