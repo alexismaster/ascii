@@ -15,7 +15,7 @@
   </head>
   <body>
     <div id="main-container">
-      <header class="wrapper clearfix">
+      <main class="wrapper clearfix">
         <h1 id="title">
           <img src="assets/img/compass.png" alt="ASCII" title="ASCII">
         </h1>
@@ -24,7 +24,7 @@
           <input type="file" name="img">
           <button type="submit" name="submit">Generate</button>
         </form>
-      </header>
+      </main>
     </div>
   </body>
 </html>

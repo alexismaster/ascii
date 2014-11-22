@@ -1,16 +1,18 @@
 @import 'mixins.scss';
 @import 'reset.scss';
 @import 'general.scss';
+@import 'variables.scss';
 
 #main-container{
   min-height: 100%;
   position: relative;
-  header{
+  main{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 750px;
-    margin:-130px 0 0 -375px;
+    width: $width;
+    margin-top:-$height/2;
+    margin-left:-$width/2;
     h1{
       text-align:center;
       margin: 0 0 1em 0;
@@ -25,3 +27,5 @@
     }
   }
 }
+
+@import 'queries.scss';
