@@ -8,7 +8,7 @@ Simply upload a file using the upload button and it'll return the ascii equivale
 
 ## Support
 
-The tool currently support png and jpg image.
+The tool only support png and jpg image.
 
 ## Why
 
