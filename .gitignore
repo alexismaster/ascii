@@ -3,3 +3,5 @@
 v2*
 vendor
 composer.lock
+tmp/*
+!tmp/.gitkeep
