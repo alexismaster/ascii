@@ -1,4 +1,3 @@
-<?php require 'inc/config.php'; ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,11 +19,8 @@
         <h1 id="title">
           <img src="assets/img/compass.png" alt="ASCII" title="ASCII">
         </h1>
-        <p>To convert a picture, choose a file from your computer and click the button "generate". Optionally you can customize the output by pressing the parameter button and changing the configuration.</p>
-        <form action="/generate" method="post" enctype="multipart/form-data">
-          <input type="file" name="file">
-          <button type="submit" name="submit">Generate</button>
-        </form>
+        <h2 class="center">404 page</h2>
+        <p class="center">The page you are trying to acces doesn't exist.</p>
       </main>
     </div>
   </body>

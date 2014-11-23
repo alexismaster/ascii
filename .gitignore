@@ -1,0 +1,6 @@
+.Ds_store
+.sass-cache
+v2*
+vendor
+tmp/*
+!tmp/.gitkeep
