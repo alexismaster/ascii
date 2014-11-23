@@ -14,6 +14,10 @@ The tool only support png and jpg image.
 
 For fun.
 
+## Icon
+
+Icon from [Elegantthemes](http://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free).
+
 ## License
 
 Copyright (C) 2014 by Mathieu Gosselin
