@@ -1,4 +1,6 @@
 <?php
+  require 'inc/config.php';
+
   /*================================================================================*/
   //check post img first
   $destination = 'tmp/' . basename($_FILES["file"]["name"]);
